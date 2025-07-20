@@ -19,6 +19,20 @@
             <!-- Corner Edges -->
             <div class="corner-edge-left"></div>
             <div class="corner-edge-right"></div>
+            <!-- Wall Timer Display -->
+            <div class="wall-timer" id="wall-timer">19:28</div>
+            
+            <!-- Wall Photos/Posters -->
+            <div class="wall-photo naruto-poster">
+                <div class="photo-placeholder">NARUTO</div>
+            </div>
+            <div class="wall-photo initial-d-poster">
+                <div class="photo-placeholder">INITIAL D</div>
+            </div>
+            <div class="wall-photo portrait-photo">
+                <div class="photo-placeholder">PORTRAIT</div>
+            </div>
+            
             <!-- Window Area with Sun Light -->
             <div class="window-area">
                 <div class="window-frame">
@@ -33,7 +47,53 @@
                 <!-- Sun Light Effect -->
                 <div class="sun-light"></div>
             </div>
+            
+            <!-- Realistic Wooden Desk -->
+            <div class="desk-setup">
+                <!-- Desk Stand/Legs -->
+                <div class="desk-stand">
+                    <div class="stand-leg left-leg"></div>
+                    <div class="stand-leg right-leg"></div>
+                    <div class="stand-crossbar"></div>
+                </div>
+                
+                <!-- Desk Surface -->
+                <div class="desk-surface">
+                    <!-- Wood grain pattern -->
+                    <div class="wood-grain"></div>
+                    
+                    <!-- Control Panel on right side -->
+                    <div class="control-panel">
+                        <div class="control-button btn-1"></div>
+                        <div class="control-button btn-2"></div>
+                        <div class="control-button btn-3"></div>
+                    </div>
+                </div>
+            </div>
         </div>
     </div>
+    
+    <script>
+        function updateTime() {
+            const now = new Date();
+            const hours = now.getHours().toString().padStart(2, '0');
+            const minutes = now.getMinutes().toString().padStart(2, '0');
+            const timeString = `${hours}:${minutes}`;
+            
+            const timerElement = document.getElementById('wall-timer');
+            if (timerElement) {
+                timerElement.textContent = timeString;
+                console.log('Time updated:', timeString);
+            } else {
+                console.log('Timer element not found');
+            }
+        }
+        
+        // Wait for DOM to load
+        document.addEventListener('DOMContentLoaded', function() {
+            updateTime();
+            setInterval(updateTime, 1000);
+        });
+    </script>
 </body>
 </html>

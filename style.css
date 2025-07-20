@@ -219,6 +219,279 @@ body {
   }
 }
 
+/* ===== WALL TIMER DISPLAY ===== */
+.wall-timer {
+  position: absolute;
+  top: 8%;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: 'Courier New', monospace;
+  font-size: 48px;
+  font-weight: bold;
+  color: #ffffff;
+  text-shadow: 
+    0 0 20px #ffffff, 
+    0 0 40px #ffffff, 
+    0 0 60px #ffffff,
+    0 0 80px rgba(255, 255, 255, 0.8);
+  z-index: 10;
+  animation: timerGlow 3s ease-in-out infinite alternate;
+}
+
+@keyframes timerGlow {
+  from {
+    text-shadow: 
+      0 0 20px #ffffff, 
+      0 0 40px #ffffff, 
+      0 0 60px #ffffff,
+      0 0 80px rgba(255, 255, 255, 0.8);
+  }
+  to {
+    text-shadow: 
+      0 0 25px #ffffff, 
+      0 0 50px #ffffff, 
+      0 0 75px #ffffff,
+      0 0 100px rgba(255, 255, 255, 0.9);
+  }
+}
+
+/* ===== WALL PHOTOS/POSTERS ===== */
+.wall-photo {
+  position: absolute;
+  z-index: 8;
+  overflow: hidden;
+}
+
+.wall-photo:not(.naruto-poster):not(.initial-d-poster):not(.portrait-photo) {
+  border: 3px solid #8b4513;
+  border-radius: 6px;
+  box-shadow: 
+    0 6px 20px rgba(0, 0, 0, 0.25),
+    0 2px 6px rgba(0, 0, 0, 0.15);
+}
+
+.photo-placeholder {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: 'Arial', sans-serif;
+  font-weight: bold;
+  color: #333;
+  background: linear-gradient(135deg, #f0f0f0, #e0e0e0);
+  border: 2px dashed #ccc;
+}
+
+/* Naruto Poster - Large, top left corner */
+.naruto-poster {
+  top: 5%;
+  left: 12%;
+  width: 120px;
+  height: 170px;
+  background-image: url('https://i.ebayimg.com/images/g/WlAAAOSw0gFasZhJ/s-l1600.webp');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  border: none;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+}
+
+.naruto-poster .photo-placeholder {
+  display: none;
+}
+
+/* Initial D Poster - Medium, moved more right */
+.initial-d-poster {
+  top: 25%;
+  left: 25%;
+  width: 100px;
+  height: 130px;
+  background-image: url('https://i.pinimg.com/1200x/db/40/58/db4058e0a7d5afba807a54a7ef08a7a9.jpg');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  border: none;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+}
+
+.initial-d-poster .photo-placeholder {
+  display: none;
+}
+
+/* Portrait Photo - Small, center area between timer and other photos */
+.portrait-photo {
+  top: 18%;
+  left: 38%;
+  width: 70px;
+  height: 90px;
+  background-image: url('https://i.pinimg.com/736x/ce/27/26/ce27263519a6f49c79da3ffe6ea1b008.jpg');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  border: none;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+}
+
+.portrait-photo .photo-placeholder {
+  display: none;
+}
+
+/* ===== REALISTIC WOODEN DESK ===== */
+.desk-setup {
+  position: absolute;
+  bottom: 15%;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 60%;
+  height: 25%;
+  z-index: 6;
+}
+
+/* Desk Stand/Legs (3D Gray Style) */
+.desk-stand {
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 80%;
+  height: 40%;
+  z-index: 1;
+}
+
+.stand-leg {
+  position: absolute;
+  bottom: 0;
+  width: 8%;
+  height: 100%;
+  background: linear-gradient(135deg, 
+    #8a8a8a 0%,
+    #6a6a6a 30%,
+    #4a4a4a 70%,
+    #6a6a6a 100%);
+  border-radius: 4px;
+  box-shadow: 
+    0 4px 8px rgba(0, 0, 0, 0.2),
+    inset -2px 0 4px rgba(0, 0, 0, 0.2),
+    inset 2px 0 4px rgba(255, 255, 255, 0.1);
+}
+
+.left-leg {
+  left: 15%;
+  transform: perspective(400px) rotateY(10deg);
+}
+
+.right-leg {
+  right: 15%;
+  transform: perspective(400px) rotateY(-10deg);
+}
+
+.stand-crossbar {
+  position: absolute;
+  bottom: 30%;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 60%;
+  height: 15%;
+  background: linear-gradient(135deg, 
+    #6a6a6a 0%,
+    #8a8a8a 50%,
+    #4a4a4a 100%);
+  border-radius: 8px;
+  box-shadow: 
+    0 2px 4px rgba(0, 0, 0, 0.15),
+    inset 0 -1px 2px rgba(0, 0, 0, 0.2),
+    inset 0 1px 2px rgba(255, 255, 255, 0.1);
+}
+
+/* Desk Surface (Realistic Wood) */
+.desk-surface {
+  position: absolute;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 100%;
+  height: 60%;
+  background: linear-gradient(135deg, 
+    #cd853f 0%,
+    #a0522d 30%,
+    #8b4513 70%,
+    #a0522d 100%);
+  border: 3px solid #1a1a1a;
+  border-radius: 8px;
+  box-shadow: 
+    0 8px 16px rgba(0, 0, 0, 0.3),
+    inset 0 0 8px rgba(0, 0, 0, 0.1);
+  z-index: 2;
+  overflow: hidden;
+}
+
+/* Wood Grain Pattern */
+.wood-grain {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-image: 
+    repeating-linear-gradient(0deg,
+      transparent 0px,
+      rgba(101, 67, 33, 0.1) 1px,
+      transparent 2px,
+      rgba(101, 67, 33, 0.05) 4px,
+      transparent 6px),
+    repeating-linear-gradient(90deg,
+      transparent 0px,
+      rgba(101, 67, 33, 0.08) 0.5px,
+      transparent 1.5px,
+      rgba(101, 67, 33, 0.04) 3px,
+      transparent 6px),
+    radial-gradient(ellipse at 20% 30%, 
+      rgba(101, 67, 33, 0.3) 0%,
+      transparent 40%),
+    radial-gradient(ellipse at 70% 60%, 
+      rgba(101, 67, 33, 0.2) 0%,
+      transparent 30%);
+}
+
+/* Control Panel (Right Side Buttons) */
+.control-panel {
+  position: absolute;
+  bottom: 10%;
+  right: 8%;
+  display: flex;
+  gap: 8px;
+  z-index: 3;
+}
+
+.control-button {
+  width: 20px;
+  height: 20px;
+  background: linear-gradient(135deg, 
+    #555555 0%,
+    #333333 50%,
+    #555555 100%);
+  border: 1px solid #1a1a1a;
+  border-radius: 50%;
+  box-shadow: 
+    0 2px 4px rgba(0, 0, 0, 0.15),
+    inset 0 1px 2px rgba(255, 255, 255, 0.2),
+    inset 0 -1px 2px rgba(0, 0, 0, 0.3);
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.control-button:hover {
+  transform: translateY(-1px);
+  box-shadow: 
+    0 4px 8px rgba(0, 0, 0, 0.25),
+    inset 0 1px 2px rgba(255, 255, 255, 0.3),
+    inset 0 -1px 2px rgba(0, 0, 0, 0.2);
+}
+
 /* ===== RESPONSIVE DESIGN ===== */
 @media (max-width: 1200px) {
   .workspace-container {
@@ -230,6 +503,20 @@ body {
   .workspace-container {
     max-height: 600px;
     border-radius: 8px;
+  }
+  
+  .desk-setup {
+    width: 70%;
+    height: 20%;
+  }
+  
+  .control-button {
+    width: 15px;
+    height: 15px;
+  }
+  
+  .control-panel {
+    gap: 6px;
   }
 }
 
