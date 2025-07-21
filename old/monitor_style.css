@@ -1,0 +1,348 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background: linear-gradient(135deg, #2c3e50 0%, #34495e 100%);
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: 'Arial', sans-serif;
+    overflow: hidden;
+}
+
+.scene {
+    position: relative;
+    width: 800px;
+    height: 600px;
+    perspective: 1000px;
+}
+
+/* Desk Styling */
+.desk {
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 700px;
+    height: 200px;
+}
+
+.desk-surface {
+    width: 100%;
+    height: 40px;
+    background: linear-gradient(45deg, #8B4513 0%, #A0522D 50%, #8B4513 100%);
+    border-radius: 8px;
+    box-shadow: 
+        0 4px 8px rgba(0, 0, 0, 0.3),
+        inset 0 2px 4px rgba(255, 255, 255, 0.1);
+    position: relative;
+}
+
+.desk-surface::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: repeating-linear-gradient(
+        90deg,
+        transparent,
+        transparent 2px,
+        rgba(139, 69, 19, 0.1) 2px,
+        rgba(139, 69, 19, 0.1) 4px
+    );
+    border-radius: 8px;
+}
+
+.desk-legs {
+    position: relative;
+    top: 10px;
+}
+
+.leg {
+    position: absolute;
+    width: 20px;
+    height: 150px;
+    background: linear-gradient(45deg, #696969 0%, #808080 50%, #696969 100%);
+    border-radius: 4px;
+    box-shadow: 2px 2px 6px rgba(0, 0, 0, 0.3);
+}
+
+.left-leg {
+    left: 50px;
+}
+
+.right-leg {
+    right: 50px;
+}
+
+/* Monitors Container */
+.monitors-container {
+    position: absolute;
+    bottom: 160px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 600px;
+    height: 400px;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+}
+
+/* Monitor Base Styling */
+.monitor {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.monitor-stand {
+    position: relative;
+    z-index: 1;
+}
+
+.stand-base {
+    width: 80px;
+    height: 15px;
+    background: linear-gradient(45deg, #2c3e50 0%, #34495e 50%, #2c3e50 100%);
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+.stand-arm {
+    width: 8px;
+    height: 60px;
+    background: linear-gradient(45deg, #2c3e50 0%, #34495e 50%, #2c3e50 100%);
+    margin: 0 auto;
+    border-radius: 4px;
+    box-shadow: 2px 0 4px rgba(0, 0, 0, 0.2);
+}
+
+/* Monitor Frame - Reduced Bezel */
+.monitor-frame {
+    position: relative;
+    margin-bottom: 10px;
+}
+
+.monitor-bezel {
+    padding: 3px; /* Reduced from 8px to 3px for thinner bezels */
+    background: linear-gradient(145deg, #1a1a1a 0%, #2d2d2d 50%, #1a1a1a 100%);
+    border-radius: 8px;
+    box-shadow: 
+        0 8px 16px rgba(0, 0, 0, 0.4),
+        inset 0 2px 4px rgba(255, 255, 255, 0.1);
+}
+
+/* Screen Dimensions */
+.vertical-screen {
+    width: 180px;
+    height: 280px;
+}
+
+.horizontal-screen {
+    width: 320px;
+    height: 200px;
+}
+
+.screen {
+    border-radius: 6px; /* Slightly reduced to match thinner bezel */
+    overflow: hidden;
+    position: relative;
+    box-shadow: inset 0 0 20px rgba(0, 0, 0, 0.3);
+}
+
+.screen-content {
+    width: 100%;
+    height: 100%;
+    position: relative;
+}
+
+/* Monitor Image Styling */
+.monitor-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 6px;
+    animation: screenGlow 3s ease-in-out infinite alternate;
+}
+
+/* Screen Glow Effect */
+.screen-glow {
+    position: absolute;
+    top: -10px;
+    left: -10px;
+    right: -10px;
+    bottom: -10px;
+    background: radial-gradient(
+        ellipse at center,
+        rgba(100, 200, 255, 0.3) 0%,
+        rgba(100, 200, 255, 0.1) 40%,
+        transparent 70%
+    );
+    border-radius: 15px;
+    z-index: -1;
+    animation: ambientGlow 4s ease-in-out infinite alternate;
+}
+
+.screen-reflection {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(
+        135deg,
+        rgba(255, 255, 255, 0.2) 0%,
+        transparent 30%,
+        transparent 70%,
+        rgba(255, 255, 255, 0.05) 100%
+    );
+    pointer-events: none;
+    border-radius: 6px;
+}
+
+/* Left Monitor Positioning */
+.left-monitor {
+    transform: translateY(-20px);
+}
+
+.left-monitor .screen-glow {
+    background: radial-gradient(
+        ellipse at center,
+        rgba(102, 126, 234, 0.4) 0%,
+        rgba(118, 75, 162, 0.2) 40%,
+        transparent 70%
+    );
+}
+
+/* Right Monitor Positioning */
+.right-monitor {
+    transform: translateY(0px);
+}
+
+.right-monitor .screen-glow {
+    background: radial-gradient(
+        ellipse at center,
+        rgba(79, 172, 254, 0.4) 0%,
+        rgba(0, 242, 254, 0.2) 40%,
+        transparent 70%
+    );
+}
+
+/* Enhanced Animations */
+@keyframes screenGlow {
+    0% {
+        filter: brightness(1) saturate(1) contrast(1);
+    }
+    100% {
+        filter: brightness(1.1) saturate(1.2) contrast(1.05);
+    }
+}
+
+@keyframes ambientGlow {
+    0% {
+        opacity: 0.6;
+        transform: scale(1);
+    }
+    100% {
+        opacity: 1;
+        transform: scale(1.05);
+    }
+}
+
+/* Hover Effects */
+.monitor:hover .monitor-image {
+    animation-duration: 1s;
+    filter: brightness(1.15) saturate(1.3);
+}
+
+.monitor:hover .monitor-bezel {
+    box-shadow: 
+        0 12px 24px rgba(0, 0, 0, 0.5),
+        inset 0 2px 4px rgba(255, 255, 255, 0.15);
+}
+
+.monitor:hover .screen-glow {
+    animation-duration: 2s;
+    opacity: 1.2;
+}
+
+/* Light Effects on Desk */
+.desk-surface::after {
+    content: '';
+    position: absolute;
+    top: -20px;
+    left: 0;
+    right: 0;
+    height: 20px;
+    background: linear-gradient(
+        to bottom,
+        rgba(100, 200, 255, 0.1) 0%,
+        transparent 100%
+    );
+    border-radius: 8px 8px 0 0;
+    animation: deskGlow 5s ease-in-out infinite alternate;
+}
+
+@keyframes deskGlow {
+    0% {
+        opacity: 0.3;
+    }
+    100% {
+        opacity: 0.7;
+    }
+}
+
+/* Responsive Design */
+@media (max-width: 900px) {
+    .scene {
+        width: 90vw;
+        height: 70vh;
+    }
+    
+    .desk {
+        width: 80vw;
+    }
+    
+    .monitors-container {
+        width: 70vw;
+        flex-direction: column;
+        align-items: center;
+        gap: 20px;
+    }
+    
+    .vertical-screen {
+        width: 140px;
+        height: 220px;
+    }
+    
+    .horizontal-screen {
+        width: 250px;
+        height: 160px;
+    }
+}
+
+/* Image Replacement Instructions (CSS Comments) */
+/*
+To replace images in the monitors:
+
+1. For the left monitor (vertical):
+   Change the src attribute of #left-monitor-image to your image URL
+
+2. For the right monitor (horizontal):
+   Change the src attribute of #right-monitor-image to your image URL
+
+Example:
+document.getElementById('left-monitor-image').src = 'your-image-url.jpg';
+document.getElementById('right-monitor-image').src = 'your-image-url.jpg';
+
+Or directly in HTML:
+<img src="your-image-url.jpg" alt="Left Monitor Display" class="monitor-image" id="left-monitor-image">
+*/
+
