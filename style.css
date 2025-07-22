@@ -509,7 +509,7 @@ body {
   gap: 25px; /* Reduced gap between monitors */
 }
 
-/* ENHANCED: Monitor with improved stand design */
+/* Monitor with improved stand design */
 .monitor {
   position: relative;
   display: flex;
@@ -520,7 +520,7 @@ body {
   transform: rotateX(-85deg);
 }
 
-/* ENHANCED: Realistic monitor stand base - circular design */
+/* Realistic monitor stand base - circular design */
 .monitor::after {
   content: '';
   position: absolute;
@@ -695,20 +695,19 @@ body {
 }
 
 /* ===== GAMING PC STYLES ===== */
-/* ENHANCED: Gaming PC with proper scaling and positioning */
+/* Gaming PC with proper scaling and positioning */
 .gaming-pc {
   position: relative;
   z-index: 11;
   perspective: 1200px;
   filter: drop-shadow(0 15px 25px rgba(0, 0, 0, 0.4));
   transform-origin: bottom center;
-  transform: rotateX(-85deg) scale(1.4); /* Increased scale for better proportion */
 }
 
-/* ENHANCED: Larger PC case with better proportions */
+/* Larger PC case with better proportions */
 .gaming-pc .pc-case-art {
-  width: 95px; /* Increased from 80px */
-  height: 200px; /* Increased from 180px */
+  width: 95px; 
+  height: 180px;
   background: linear-gradient(145deg, #080808, #151515, #0a0a0a);
   border-radius: 6px;
   position: relative;
