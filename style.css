@@ -393,12 +393,12 @@ body {
   right: 12%;
 }
 
-/* Professional Office Desk - Front View 30% Angle */
+/* Professional Office Desk - FIXED: Removed conflicting perspective */
 .desk-surface {
   position: absolute;
   top: -5%;
   left: 50%;
-  transform: translateX(-50%) perspective(50px) rotateX(6deg) rotateY(0deg);
+  transform: translateX(-50%) rotateX(6deg);
   transform-origin: center bottom;
   width: 90%;
   height: 60%;
@@ -468,7 +468,19 @@ body {
   border-radius: 4px;
 }
 
-
+/* Hardware wrapper to isolate from desk transforms */
+.hardware-wrapper {
+  position: absolute;
+  bottom: 58%;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 70%;
+  display: flex;
+  justify-content: center;
+  align-items: flex-end;
+  gap: 35px; /* Slightly increased gap for better spacing */
+  z-index: 15;
+}
 
 /* Desk Shadow for Depth */
 .desk-shadow {
@@ -489,51 +501,52 @@ body {
 /* ===== DETAILED MONITOR SETUP ===== */
 /* Monitors Container */
 .monitors-container {
-  position: absolute;
-  top: -20%;
-  left: 50%;
-  transform: translateX(-50%);
+  position: relative;
   transform-style: preserve-3d;
-  width: 70%;
-  height: 60%;
   display: flex;
   justify-content: center;
   align-items: flex-end;
-  gap: 30px;
-  z-index: 10;
+  gap: 25px; /* Reduced gap between monitors */
 }
 
-.monitor::after {
-  content: '';
-  position: absolute;
-  bottom: 0;
-  left: 50%;
-  transform: translateX(-50%) perspective(600px) rotateX(90deg);
-  width: 80px;
-  height: 15px;
-  background: linear-gradient(145deg, #2a2a2a, #1a1a1a);
-  border-radius: 8px;
-  box-shadow: 
-    0 6px 18px rgba(0, 0, 0, 0.5),
-    0 2px 8px rgba(0, 0, 0, 0.3);
-  z-index: -1;
-}
-
-/* Monitor Base Styling */
+/* ENHANCED: Monitor with improved stand design */
 .monitor {
   position: relative;
   display: flex;
   flex-direction: column;
   align-items: center;
   transform-style: preserve-3d;
+  transform-origin: bottom center;
+  transform: rotateX(-85deg);
 }
 
+/* ENHANCED: Realistic monitor stand base - circular design */
+.monitor::after {
+  content: '';
+  position: absolute;
+  bottom: -8px;
+  left: 50%;
+  transform: translateX(-50%) rotateX(90deg);
+  width: 90px;
+  height: 90px;
+  background: radial-gradient(circle at center,
+    #2a2a2a 0%,
+    #1e1e1e 30%,
+    #1a1a1a 60%,
+    #0f0f0f 100%);
+  border-radius: 50%;
+  box-shadow: 
+    0 8px 20px rgba(0, 0, 0, 0.6),
+    0 4px 12px rgba(0, 0, 0, 0.4),
+    inset 0 2px 4px rgba(255, 255, 255, 0.1),
+    inset 0 -2px 4px rgba(0, 0, 0, 0.3);
+  border: 2px solid #333;
+  z-index: -1;
+}
 
 /* Monitor Frame - Reduced Bezel */
 .monitor-frame {
   position: relative;
-  transform: rotateX(-75deg);
-  transform-origin: bottom center;
   transform-style: preserve-3d;
 }
 
@@ -546,15 +559,15 @@ body {
     inset 0 2px 4px rgba(255, 255, 255, 0.1);
 }
 
-/* Screen Dimensions */
+/* ADJUSTED: Reduced screen dimensions for better balance */
 .vertical-screen {
-  width: 135px;
-  height: 280px;
+  width: 120px;
+  height: 220px;
 }
 
 .horizontal-screen {
-  width: 240px;
-  height: 200px;
+  width: 220px;
+  height: 140px;
 }
 
 .screen {
@@ -643,7 +656,6 @@ body {
   );
 }
 
-
 /* Enhanced Animations */
 @keyframes screenGlow {
   0% {
@@ -682,71 +694,21 @@ body {
   opacity: 1.2;
 }
 
-/* ===== RESPONSIVE DESIGN ===== */
-@media (max-width: 1200px) {
-  .workspace-container {
-    max-height: 700px;
-  }
-}
-
-@media (max-width: 768px) {
-  .workspace-container {
-    max-height: 600px;
-    border-radius: 8px;
-  }
-  
-  .desk-setup {
-    width: 80%;
-    height: 30%;
-  }
-  
-  .desk-legs {
-    height: 70%;
-  }
-  
-  .desk-leg {
-    width: 8%;
-  }
-  
-  .desk-leg.left-leg {
-    left: 15%;
-  }
-  
-  .desk-leg.right-leg {
-    right: 15%;
-  }
-  
-  .monitors-container {
-    width: 85%;
-    flex-direction: column;
-    align-items: center;
-    gap: 15px;
-  }
-  
-  .vertical-screen {
-    width: 105px;
-    height: 165px;
-  }
-  
-  .horizontal-screen {
-    width: 190px;
-    height: 120px;
-  }
-}
-
 /* ===== GAMING PC STYLES ===== */
+/* ENHANCED: Gaming PC with proper scaling and positioning */
 .gaming-pc {
-  position: absolute;
-  top: -10%;
-  right: 8%;
+  position: relative;
   z-index: 11;
   perspective: 1200px;
   filter: drop-shadow(0 15px 25px rgba(0, 0, 0, 0.4));
+  transform-origin: bottom center;
+  transform: rotateX(-85deg) scale(1.4); /* Increased scale for better proportion */
 }
 
+/* ENHANCED: Larger PC case with better proportions */
 .gaming-pc .pc-case-art {
-  width: 80px;
-  height: 180px;
+  width: 95px; /* Increased from 80px */
+  height: 200px; /* Increased from 180px */
   background: linear-gradient(145deg, #080808, #151515, #0a0a0a);
   border-radius: 6px;
   position: relative;
@@ -754,10 +716,32 @@ body {
     0 12px 25px rgba(0, 0, 0, 0.9),
     0 0 0 1px rgba(255, 255, 255, 0.05),
     inset 0 1px 0 rgba(255, 255, 255, 0.1);
-  transform: rotateX(-75deg);
-  transform-origin: bottom center;
   transform-style: preserve-3d;
   overflow: hidden;
+}
+
+/* Add a circular base for the PC too */
+.gaming-pc::after {
+  content: '';
+  position: absolute;
+  bottom: -8px;
+  left: 50%;
+  transform: translateX(-50%) rotateX(90deg);
+  width: 85px;
+  height: 85px;
+  background: radial-gradient(circle at center,
+    #2a2a2a 0%,
+    #1e1e1e 30%,
+    #1a1a1a 60%,
+    #0f0f0f 100%);
+  border-radius: 50%;
+  box-shadow: 
+    0 8px 20px rgba(0, 0, 0, 0.6),
+    0 4px 12px rgba(0, 0, 0, 0.4),
+    inset 0 2px 4px rgba(255, 255, 255, 0.1),
+    inset 0 -2px 4px rgba(0, 0, 0, 0.3);
+  border: 2px solid #333;
+  z-index: -1;
 }
 
 .gaming-pc .glass-overlay {
@@ -788,7 +772,7 @@ body {
 
 .gaming-pc .omen-logo h1 {
   color: #ffffff;
-  font-size: 6px;
+  font-size: 7px; /* Slightly increased font size */
   font-weight: 200;
   letter-spacing: 1px;
   text-shadow: 
@@ -803,13 +787,13 @@ body {
   transform: translate(-50%, -50%);
   display: flex;
   flex-direction: column;
-  gap: 8px;
+  gap: 10px; /* Slightly increased gap */
   z-index: 10;
 }
 
 .gaming-pc .rgb-fan {
-  width: 35px;
-  height: 35px;
+  width: 40px; /* Increased from 35px */
+  height: 40px; /* Increased from 35px */
   position: relative;
   border-radius: 50%;
 }
@@ -876,8 +860,8 @@ body {
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-  width: 12px;
-  height: 12px;
+  width: 14px; /* Slightly increased from 12px */
+  height: 14px; /* Slightly increased from 12px */
   background: radial-gradient(circle, #000000, #1a1a1a, #000000);
   border-radius: 50%;
   display: flex;
@@ -891,7 +875,7 @@ body {
 
 .gaming-pc .hub-text {
   color: #ffffff;
-  font-size: 2px;
+  font-size: 2.5px; /* Slightly increased from 2px */
   font-weight: bold;
   letter-spacing: 0.3px;
   opacity: 0.9;
@@ -910,8 +894,8 @@ body {
   position: absolute;
   top: 50%;
   left: 50%;
-  width: 15px;
-  height: 1.5px;
+  width: 17px; /* Increased from 15px */
+  height: 1.8px; /* Increased from 1.5px */
   background: linear-gradient(90deg, 
     rgba(255, 255, 255, 0.9) 0%, 
     rgba(255, 255, 255, 0.4) 50%, 
@@ -942,8 +926,8 @@ body {
 }
 
 .gaming-pc .ventilation-pattern {
-  width: 12px;
-  height: 12px;
+  width: 14px; /* Slightly increased from 12px */
+  height: 14px; /* Slightly increased from 12px */
   background-image: 
     repeating-linear-gradient(0deg, 
       rgba(255, 255, 255, 0.08) 0px, 
@@ -962,7 +946,7 @@ body {
 
 .gaming-pc .brand-mark {
   color: rgba(255, 255, 255, 0.5);
-  font-size: 3px;
+  font-size: 3.5px; /* Slightly increased from 3px */
   font-weight: bold;
   letter-spacing: 0.3px;
 }
@@ -993,6 +977,62 @@ body {
     rgba(255, 0, 255, 0.1) 50%, 
     transparent 70%
   );
+}
+
+/* ===== RESPONSIVE DESIGN ===== */
+@media (max-width: 1200px) {
+  .workspace-container {
+    max-height: 700px;
+  }
+}
+
+@media (max-width: 768px) {
+  .workspace-container {
+    max-height: 600px;
+    border-radius: 8px;
+  }
+  
+  .desk-setup {
+    width: 80%;
+    height: 30%;
+  }
+  
+  .desk-legs {
+    height: 70%;
+  }
+  
+  .desk-leg {
+    width: 8%;
+  }
+  
+  .desk-leg.left-leg {
+    left: 15%;
+  }
+  
+  .desk-leg.right-leg {
+    right: 15%;
+  }
+  
+  .hardware-wrapper {
+    width: 85%;
+    flex-direction: column;
+    align-items: center;
+    gap: 15px;
+  }
+  
+  .vertical-screen {
+    width: 95px; /* Responsive adjustment */
+    height: 150px; /* Responsive adjustment */
+  }
+  
+  .horizontal-screen {
+    width: 170px; /* Responsive adjustment */
+    height: 110px; /* Responsive adjustment */
+  }
+  
+  .gaming-pc {
+    transform: rotateX(-85deg) scale(1.2); /* Slightly smaller on mobile */
+  }
 }
 
 /* ===== ACCESSIBILITY ===== */
