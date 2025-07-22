@@ -1,10 +1,9 @@
 /* ===== MODERN GAMING OFFICE WORKSPACE ===== */
 
 :root {
-  /* Color Palette from Reference Image */
+  /* Color Palette */
   --wall-main: #a7a7a2;
   --wall-corner: #a7a7a2;
-  --wall-door-border: #b8b4b8;
   --bottom-carpet: #949074;
   --wall-baseboard: #ffffff;
   --window-frame: #8b4513;
@@ -12,7 +11,6 @@
   
   /* Shadows */
   --shadow-hard: 0 8px 32px rgba(0, 0, 0, 0.25);
-  --shadow-soft: 0 2px 8px rgba(0, 0, 0, 0.1);
   --shadow-medium: 0 4px 16px rgba(0, 0, 0, 0.15);
 }
 
@@ -56,7 +54,6 @@ body {
   perspective: 1500px;
 }
 
-/* Back Wall (Main Wall) - Moved more to right */
 .room-wall::before {
   content: '';
   position: absolute;
@@ -68,20 +65,6 @@ body {
   z-index: 1;
 }
 
-/* Left Side Wall - Completely Flat */
-.room-wall::after {
-  content: '';
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 0;
-  height: 0;
-  background: transparent;
-  transform: none;
-  z-index: 0;
-}
-
-/* Bottom Carpet/Floor */
 .bottom-carpet {
   position: absolute;
   bottom: 0;
@@ -92,7 +75,6 @@ body {
   z-index: 2;
 }
 
-/* Right Side Wall - Angled (where window is) - Reduced Shadow */
 .right-wall {
   position: absolute;
   top: 0;
@@ -108,7 +90,6 @@ body {
   z-index: 2;
 }
 
-/* Wall Baseboard - White trim at bottom */
 .wall-baseboard {
   position: absolute;
   bottom: 25%;
@@ -122,18 +103,6 @@ body {
     0 2px 4px rgba(0,0,0,0.1);
 }
 
-/* Left Corner Edge - Hidden since left wall is flat */
-.corner-edge-left {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 0;
-  height: 0;
-  background: transparent;
-  z-index: 0;
-}
-
-/* Right Corner Edge */
 .corner-edge-right {
   position: absolute;
   top: 0;
@@ -193,7 +162,6 @@ body {
     inset 0 1px 1px rgba(255,255,255,0.8);
 }
 
-/* Sun Light Effect */
 .sun-light {
   position: absolute;
   top: -20%;
@@ -286,7 +254,6 @@ body {
   border: 2px dashed #ccc;
 }
 
-/* Naruto Poster - Large, top left corner */
 .naruto-poster {
   top: 5%;
   left: 12%;
@@ -296,15 +263,9 @@ body {
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
-  border: none;
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
 }
 
-.naruto-poster .photo-placeholder {
-  display: none;
-}
-
-/* Initial D Poster - Medium, moved more right */
 .initial-d-poster {
   top: 25%;
   left: 25%;
@@ -314,15 +275,10 @@ body {
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
-  border: none;
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+  border: 2px dashed #ccc;
 }
 
-.initial-d-poster .photo-placeholder {
-  display: none;
-}
-
-/* Portrait Photo - Small, center area between timer and other photos */
 .portrait-photo {
   top: 18%;
   left: 38%;
@@ -332,12 +288,7 @@ body {
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
-  border: none;
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
-}
-
-.portrait-photo .photo-placeholder {
-  display: none;
 }
 
 /* ===== MODERN MINIMALISTIC WOODEN DESK ===== */
@@ -351,7 +302,6 @@ body {
   z-index: 6;
 }
 
-/* Realistic Rectangular Steel Legs */
 .desk-legs {
   position: absolute;
   bottom: 0;
@@ -393,7 +343,6 @@ body {
   right: 12%;
 }
 
-/* Professional Office Desk - FIXED: Removed conflicting perspective */
 .desk-surface {
   position: absolute;
   top: -5%;
@@ -421,7 +370,6 @@ body {
   position: relative;
 }
 
-/* Thin Front Border with Curved Edge */
 .desk-surface::before {
   content: '';
   position: absolute;
@@ -435,7 +383,6 @@ body {
   clip-path: polygon(8% 0%, 92% 0%, 100% 100%, 0% 100%);
 }
 
-/* Realistic Wood Grain Texture */
 .wood-texture {
   position: absolute;
   top: 0;
@@ -443,7 +390,6 @@ body {
   right: 0;
   bottom: 0;
   background-image: 
-    /* Horizontal wood grain lines */
     repeating-linear-gradient(0deg,
       transparent 0px,
       rgba(139, 69, 19, 0.15) 1px,
@@ -452,12 +398,10 @@ body {
       transparent 6px,
       rgba(139, 69, 19, 0.08) 8px,
       transparent 12px),
-    /* Vertical wood fibers */
     repeating-linear-gradient(90deg,
       transparent 0px,
       rgba(139, 69, 19, 0.05) 0.5px,
       transparent 2px),
-    /* Wood knots */
     radial-gradient(ellipse at 20% 30%, 
       rgba(101, 67, 33, 0.2) 0%,
       transparent 15%),
@@ -468,7 +412,6 @@ body {
   border-radius: 4px;
 }
 
-/* Hardware wrapper to isolate from desk transforms */
 .hardware-wrapper {
   position: absolute;
   bottom: 58%;
@@ -478,11 +421,10 @@ body {
   display: flex;
   justify-content: center;
   align-items: flex-end;
-  gap: 35px; /* Slightly increased gap for better spacing */
+  gap: 35px;
   z-index: 15;
 }
 
-/* Desk Shadow for Depth */
 .desk-shadow {
   position: absolute;
   bottom: -5%;
@@ -499,17 +441,16 @@ body {
 }
 
 /* ===== DETAILED MONITOR SETUP ===== */
-/* Monitors Container */
 .monitors-container {
   position: relative;
   transform-style: preserve-3d;
   display: flex;
   justify-content: center;
   align-items: flex-end;
-  gap: 25px; /* Reduced gap between monitors */
+  gap: 25px; 
+  margin-bottom: 40px;
 }
 
-/* Monitor with improved stand design */
 .monitor {
   position: relative;
   display: flex;
@@ -520,31 +461,22 @@ body {
   transform: rotateX(-85deg);
 }
 
-/* Realistic monitor stand base - circular design */
 .monitor::after {
   content: '';
   position: absolute;
-  bottom: -8px;
+  bottom: -10px; /* Moved below the monitor */
   left: 50%;
-  transform: translateX(-50%) rotateX(90deg);
-  width: 90px;
-  height: 90px;
-  background: radial-gradient(circle at center,
-    #2a2a2a 0%,
-    #1e1e1e 30%,
-    #1a1a1a 60%,
-    #0f0f0f 100%);
-  border-radius: 50%;
+  transform: translateX(-50%); /* Simplified transform */
+  width: 60px;
+  height: 10px;
+  background: linear-gradient(145deg, #2a2a2a, #1a1a1a);
+  border-radius: 8px;
   box-shadow: 
-    0 8px 20px rgba(0, 0, 0, 0.6),
-    0 4px 12px rgba(0, 0, 0, 0.4),
-    inset 0 2px 4px rgba(255, 255, 255, 0.1),
-    inset 0 -2px 4px rgba(0, 0, 0, 0.3);
-  border: 2px solid #333;
-  z-index: -1;
+    0 6px 18px rgba(0, 0, 0, 0.5),
+    0 2px 8px rgba(0, 0, 0, 0.3);
+  z-index: 5; /* Higher z-index to ensure visibility */
 }
 
-/* Monitor Frame - Reduced Bezel */
 .monitor-frame {
   position: relative;
   transform-style: preserve-3d;
@@ -559,7 +491,6 @@ body {
     inset 0 2px 4px rgba(255, 255, 255, 0.1);
 }
 
-/* ADJUSTED: Reduced screen dimensions for better balance */
 .vertical-screen {
   width: 120px;
   height: 220px;
@@ -583,7 +514,6 @@ body {
   position: relative;
 }
 
-/* Monitor Image Styling */
 .monitor-image {
   width: 100%;
   height: 100%;
@@ -592,7 +522,6 @@ body {
   animation: screenGlow 3s ease-in-out infinite alternate;
 }
 
-/* Screen Glow Effect */
 .screen-glow {
   position: absolute;
   top: -12px;
@@ -628,7 +557,6 @@ body {
   border-radius: 4px;
 }
 
-/* Left Monitor Positioning - Upright */
 .left-monitor {
   transform: translateZ(0);
 }
@@ -642,7 +570,6 @@ body {
   );
 }
 
-/* Right Monitor Positioning - Upright */
 .right-monitor {
   transform: translateZ(0);
 }
@@ -656,7 +583,6 @@ body {
   );
 }
 
-/* Enhanced Animations */
 @keyframes screenGlow {
   0% {
     filter: brightness(1) saturate(1) contrast(1);
@@ -677,7 +603,6 @@ body {
   }
 }
 
-/* Hover Effects */
 .monitor:hover .monitor-image {
   animation-duration: 1s;
   filter: brightness(1.15) saturate(1.3);
@@ -695,7 +620,6 @@ body {
 }
 
 /* ===== GAMING PC STYLES ===== */
-/* Gaming PC with proper scaling and positioning */
 .gaming-pc {
   position: relative;
   z-index: 11;
@@ -704,7 +628,6 @@ body {
   transform-origin: bottom center;
 }
 
-/* Larger PC case with better proportions */
 .gaming-pc .pc-case-art {
   width: 95px; 
   height: 180px;
@@ -747,7 +670,7 @@ body {
 
 .gaming-pc .omen-logo h1 {
   color: #ffffff;
-  font-size: 7px; /* Slightly increased font size */
+  font-size: 7px;
   font-weight: 200;
   letter-spacing: 1px;
   text-shadow: 
@@ -762,13 +685,13 @@ body {
   transform: translate(-50%, -50%);
   display: flex;
   flex-direction: column;
-  gap: 10px; /* Slightly increased gap */
+  gap: 10px;
   z-index: 10;
 }
 
 .gaming-pc .rgb-fan {
-  width: 40px; /* Increased from 35px */
-  height: 40px; /* Increased from 35px */
+  width: 40px;
+  height: 40px;
   position: relative;
   border-radius: 50%;
 }
@@ -835,8 +758,8 @@ body {
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-  width: 14px; /* Slightly increased from 12px */
-  height: 14px; /* Slightly increased from 12px */
+  width: 14px;
+  height: 14px;
   background: radial-gradient(circle, #000000, #1a1a1a, #000000);
   border-radius: 50%;
   display: flex;
@@ -850,7 +773,7 @@ body {
 
 .gaming-pc .hub-text {
   color: #ffffff;
-  font-size: 2.5px; /* Slightly increased from 2px */
+  font-size: 2.5px;
   font-weight: bold;
   letter-spacing: 0.3px;
   opacity: 0.9;
@@ -869,8 +792,8 @@ body {
   position: absolute;
   top: 50%;
   left: 50%;
-  width: 17px; /* Increased from 15px */
-  height: 1.8px; /* Increased from 1.5px */
+  width: 17px;
+  height: 1.8px;
   background: linear-gradient(90deg, 
     rgba(255, 255, 255, 0.9) 0%, 
     rgba(255, 255, 255, 0.4) 50%, 
@@ -901,8 +824,8 @@ body {
 }
 
 .gaming-pc .ventilation-pattern {
-  width: 14px; /* Slightly increased from 12px */
-  height: 14px; /* Slightly increased from 12px */
+  width: 14px;
+  height: 14px;
   background-image: 
     repeating-linear-gradient(0deg, 
       rgba(255, 255, 255, 0.08) 0px, 
@@ -921,7 +844,7 @@ body {
 
 .gaming-pc .brand-mark {
   color: rgba(255, 255, 255, 0.5);
-  font-size: 3.5px; /* Slightly increased from 3px */
+  font-size: 3.5px;
   font-weight: bold;
   letter-spacing: 0.3px;
 }
@@ -996,17 +919,17 @@ body {
   }
   
   .vertical-screen {
-    width: 95px; /* Responsive adjustment */
-    height: 150px; /* Responsive adjustment */
+    width: 95px;
+    height: 150px;
   }
   
   .horizontal-screen {
-    width: 170px; /* Responsive adjustment */
-    height: 110px; /* Responsive adjustment */
+    width: 170px;
+    height: 110px;
   }
   
   .gaming-pc {
-    transform: rotateX(-85deg) scale(1.2); /* Slightly smaller on mobile */
+    transform: rotateX(-85deg) scale(1.2);
   }
 }
 
