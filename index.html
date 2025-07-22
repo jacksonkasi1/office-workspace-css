@@ -1,188 +1,214 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Modern Gaming Office Workspace</title>
-    <link rel="stylesheet" href="style.css">
-</head>
-<body>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
     <div class="workspace-container">
-        <!-- Wall Background -->
-        <div class="room-wall">
-            <!-- Right Side Wall -->
-            <div class="right-wall"></div>
-            <!-- Bottom Carpet/Floor -->
-            <div class="bottom-carpet"></div>
-            <!-- Wall Baseboard -->
-            <div class="wall-baseboard"></div>
-            <!-- Corner Edges -->
-            <div class="corner-edge-left"></div>
-            <div class="corner-edge-right"></div>
-            <!-- Wall Timer Display -->
-            <div class="wall-timer" id="wall-timer">19:28</div>
-            
-            <!-- Wall Photos/Posters -->
-            <div class="wall-photo naruto-poster">
-                <!-- <div class="photo-placeholder">NARUTO</div> -->
-            </div>
-            <div class="wall-photo initial-d-poster">
-                <!-- <div class="photo-placeholder">INITIAL D</div> -->
-            </div>
-            <div class="wall-photo portrait-photo">
-                <!-- <div class="photo-placeholder">PORTRAIT</div> -->
-            </div>
-            
-            <!-- Window Area with Sun Light -->
-            <div class="window-area">
-                <div class="window-frame">
-                    <div class="window-blinds">
-                        <div class="blind-slat"></div>
-                        <div class="blind-slat"></div>
-                        <div class="blind-slat"></div>
-                        <div class="blind-slat"></div>
-                        <div class="blind-slat"></div>
-                    </div>
-                </div>
-                <!-- Sun Light Effect -->
-                <div class="sun-light"></div>
-            </div>
-            
-            <!-- Modern Minimalistic Wooden Desk -->
-            <div class="desk-setup">
-                <!-- Desk Legs - Clean Wooden Style -->
-                <div class="desk-legs">
-                    <div class="desk-leg left-leg"></div>
-                    <div class="desk-leg right-leg"></div>
-                </div>
-                
-                <!-- Desk Surface - Wood Texture -->
-                <div class="desk-surface">
-                    <!-- Natural Wood Grain -->
-                    <div class="wood-texture"></div>
-                    <!-- 3D Desk Edges -->
-                    <div class="desk-edge"></div>
-                </div>
-                
-                <!-- NEW: Hardware Wrapper - Isolated from desk transforms -->
-                <div class="hardware-wrapper">
-                    <!-- Detailed Dual Monitor Setup -->
-                    <div class="monitors-container">
-                        <!-- Left Monitor (Vertical) -->
-                        <div class="monitor left-monitor">
-                            <div class="monitor-frame">
-                                <div class="monitor-bezel">
-                                    <div class="screen vertical-screen">
-                                        <div class="screen-content">
-                                            <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 200 300'%3E%3Cdefs%3E%3ClinearGradient id='grad1' x1='0%25' y1='0%25' x2='100%25' y2='100%25'%3E%3Cstop offset='0%25' style='stop-color:%23667eea;stop-opacity:1' /%3E%3Cstop offset='50%25' style='stop-color:%23764ba2;stop-opacity:1' /%3E%3Cstop offset='100%25' style='stop-color:%23f093fb;stop-opacity:1' /%3E%3C/linearGradient%3E%3C/defs%3E%3Crect width='100%25' height='100%25' fill='url(%23grad1)' /%3E%3C/svg%3E" alt="Left Monitor Display" class="monitor-image" id="left-monitor-image">
-                                            <div class="screen-reflection"></div>
-                                            <div class="screen-glow"></div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        
-                        <!-- Right Monitor (Horizontal) -->
-                        <div class="monitor right-monitor">
-                            <div class="monitor-frame">
-                                <div class="monitor-bezel">
-                                    <div class="screen horizontal-screen">
-                                        <div class="screen-content">
-                                            <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 320 200'%3E%3Cdefs%3E%3ClinearGradient id='grad2' x1='0%25' y1='0%25' x2='100%25' y2='100%25'%3E%3Cstop offset='0%25' style='stop-color:%234facfe;stop-opacity:1' /%3E%3Cstop offset='50%25' style='stop-color:%2300f2fe;stop-opacity:1' /%3E%3Cstop offset='100%25' style='stop-color:%23ff6b6b;stop-opacity:1' /%3E%3C/linearGradient%3E%3C/defs%3E%3Crect width='100%25' height='100%25' fill='url(%23grad2)' /%3E%3C/svg%3E" alt="Right Monitor Display" class="monitor-image" id="right-monitor-image">
-                                            <div class="screen-reflection"></div>
-                                            <div class="screen-glow"></div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    
-                    <!-- Gaming PC Case -->
-                    <div class="gaming-pc">
-                        <div class="pc-case-art">
-                            <!-- Glass panel overlay -->
-                            <div class="glass-overlay"></div>
-                            
-                            <!-- OMEN branding at top -->
-                            <div class="omen-logo">
-                                <h1>OMEN</h1>
-                            </div>
-                            
-                            <!-- RGB Fans container -->
-                            <div class="fans-section">
-                                <!-- Top RGB Fan -->
-                                <div class="rgb-fan fan-top">
-                                    <div class="fan-outer-ring"></div>
-                                    <div class="fan-inner-ring"></div>
-                                    <div class="fan-center-hub">
-                                        <span class="hub-text">OMEN</span>
-                                    </div>
-                                    <div class="fan-blades-static">
-                                        <div class="blade"></div>
-                                        <div class="blade"></div>
-                                        <div class="blade"></div>
-                                        <div class="blade"></div>
-                                        <div class="blade"></div>
-                                        <div class="blade"></div>
-                                    </div>
-                                </div>
-                                
-                                <!-- Bottom RGB Fan -->
-                                <div class="rgb-fan fan-bottom">
-                                    <div class="fan-outer-ring"></div>
-                                    <div class="fan-inner-ring"></div>
-                                    <div class="fan-center-hub">
-                                        <span class="hub-text">OMEN</span>
-                                    </div>
-                                    <div class="fan-blades-static">
-                                        <div class="blade"></div>
-                                        <div class="blade"></div>
-                                        <div class="blade"></div>
-                                        <div class="blade"></div>
-                                        <div class="blade"></div>
-                                        <div class="blade"></div>
-                                    </div>
-                                </div>
-                            </div>
-                            
-                            <!-- Bottom section with details -->
-                            <div class="case-bottom">
-                                <div class="ventilation-pattern"></div>
-                                <div class="brand-mark">HP</div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                
-                <!-- Desk Shadow -->
-                <div class="desk-shadow"></div>
-            </div>
+      <!-- Wall Background -->
+      <div class="room-wall">
+        <!-- Right Side Wall -->
+        <div class="right-wall"></div>
+        <!-- Bottom Carpet/Floor -->
+        <div class="bottom-carpet"></div>
+        <!-- Wall Baseboard -->
+        <div class="wall-baseboard"></div>
+        <!-- Corner Edges -->
+        <div class="corner-edge-left"></div>
+        <div class="corner-edge-right"></div>
+        <!-- Wall Timer Display -->
+        <div class="wall-timer" id="wall-timer">19:28</div>
+
+        <!-- Wall Photos/Posters -->
+        <div class="wall-photo naruto-poster">
+          <!-- <div class="photo-placeholder">NARUTO</div> -->
         </div>
+        <div class="wall-photo initial-d-poster">
+          <!-- <div class="photo-placeholder">INITIAL D</div> -->
+        </div>
+        <div class="wall-photo portrait-photo">
+          <!-- <div class="photo-placeholder">PORTRAIT</div> -->
+        </div>
+
+        <!-- Window Area with Sun Light -->
+        <div class="window-area">
+          <div class="window-frame">
+            <div class="window-blinds">
+              <div class="blind-slat"></div>
+              <div class="blind-slat"></div>
+              <div class="blind-slat"></div>
+              <div class="blind-slat"></div>
+              <div class="blind-slat"></div>
+            </div>
+          </div>
+          <!-- Sun Light Effect -->
+          <div class="sun-light"></div>
+        </div>
+
+        <!-- Modern Minimalistic Wooden Desk -->
+        <div class="desk-setup">
+          <!-- Desk Legs - Clean Wooden Style -->
+          <div class="desk-legs">
+            <div class="desk-leg left-leg"></div>
+            <div class="desk-leg right-leg"></div>
+          </div>
+
+          <!-- Desk Surface - Wood Texture -->
+          <div class="desk-surface">
+            <!-- Natural Wood Grain -->
+            <div class="wood-texture"></div>
+            <!-- 3D Desk Edges -->
+            <div class="desk-edge"></div>
+          </div>
+
+          <!-- NEW: Hardware Wrapper - Isolated from desk transforms -->
+          <div class="hardware-wrapper">
+            <!-- Detailed Dual Monitor Setup -->
+            <div class="monitors-container">
+              <!-- Left Monitor (Vertical) -->
+              <div class="monitor left-monitor">
+                <div class="monitor-frame">
+                  <div class="monitor-bezel">
+                    <div class="screen vertical-screen">
+                      <div class="screen-content">
+                        <img
+                          src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 200 300'%3E%3Cdefs%3E%3ClinearGradient id='grad1' x1='0%25' y1='0%25' x2='100%25' y2='100%25'%3E%3Cstop offset='0%25' style='stop-color:%23667eea;stop-opacity:1' /%3E%3Cstop offset='50%25' style='stop-color:%23764ba2;stop-opacity:1' /%3E%3Cstop offset='100%25' style='stop-color:%23f093fb;stop-opacity:1' /%3E%3C/linearGradient%3E%3C/defs%3E%3Crect width='100%25' height='100%25' fill='url(%23grad1)' /%3E%3C/svg%3E"
+                          alt="Left Monitor Display"
+                          class="monitor-image"
+                          id="left-monitor-image"
+                        />
+                        <div class="screen-reflection"></div>
+                        <div class="screen-glow"></div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Right Monitor (Horizontal) -->
+              <div class="monitor right-monitor">
+                <div class="monitor-frame">
+                  <div class="monitor-bezel">
+                    <div class="screen horizontal-screen">
+                      <div class="screen-content">
+                        <img
+                          src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 320 200'%3E%3Cdefs%3E%3ClinearGradient id='grad2' x1='0%25' y1='0%25' x2='100%25' y2='100%25'%3E%3Cstop offset='0%25' style='stop-color:%234facfe;stop-opacity:1' /%3E%3Cstop offset='50%25' style='stop-color:%2300f2fe;stop-opacity:1' /%3E%3Cstop offset='100%25' style='stop-color:%23ff6b6b;stop-opacity:1' /%3E%3C/linearGradient%3E%3C/defs%3E%3Crect width='100%25' height='100%25' fill='url(%23grad2)' /%3E%3C/svg%3E"
+                          alt="Right Monitor Display"
+                          class="monitor-image"
+                          id="right-monitor-image"
+                        />
+                        <div class="screen-reflection"></div>
+                        <div class="screen-glow"></div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="gaming-keyboard">
+              <div class="keyboard-base">
+                <!-- Straight Line of Essential Keys -->
+                <div class="key-row-straight">
+                  <div class="key key-ctrl">CTRL</div>
+                  <div class="key">C</div>
+                  <div class="key">V</div>
+                  <div class="key">Z</div>
+                  <div class="key key-enter">ENTER</div>
+                </div>
+
+                <!-- Brand Label -->
+                <div class="keyboard-brand">GAMING</div>
+              </div>
+            </div>
+
+            <!-- Gaming PC Case -->
+            <div class="gaming-pc">
+              <div class="pc-case-art">
+                <!-- Glass panel overlay -->
+                <div class="glass-overlay"></div>
+
+                <!-- OMEN branding at top -->
+                <div class="omen-logo">
+                  <h1>OMEN</h1>
+                </div>
+
+                <!-- RGB Fans container -->
+                <div class="fans-section">
+                  <!-- Top RGB Fan -->
+                  <div class="rgb-fan fan-top">
+                    <div class="fan-outer-ring"></div>
+                    <div class="fan-inner-ring"></div>
+                    <div class="fan-center-hub">
+                      <span class="hub-text">OMEN</span>
+                    </div>
+                    <div class="fan-blades-static">
+                      <div class="blade"></div>
+                      <div class="blade"></div>
+                      <div class="blade"></div>
+                      <div class="blade"></div>
+                      <div class="blade"></div>
+                      <div class="blade"></div>
+                    </div>
+                  </div>
+
+                  <!-- Bottom RGB Fan -->
+                  <div class="rgb-fan fan-bottom">
+                    <div class="fan-outer-ring"></div>
+                    <div class="fan-inner-ring"></div>
+                    <div class="fan-center-hub">
+                      <span class="hub-text">OMEN</span>
+                    </div>
+                    <div class="fan-blades-static">
+                      <div class="blade"></div>
+                      <div class="blade"></div>
+                      <div class="blade"></div>
+                      <div class="blade"></div>
+                      <div class="blade"></div>
+                      <div class="blade"></div>
+                    </div>
+                  </div>
+                </div>
+
+                <!-- Bottom section with details -->
+                <div class="case-bottom">
+                  <div class="ventilation-pattern"></div>
+                  <div class="brand-mark">HP</div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Desk Shadow -->
+          <div class="desk-shadow"></div>
+        </div>
+      </div>
     </div>
-    
+
     <script>
-        function updateTime() {
-            const now = new Date();
-            const hours = now.getHours().toString().padStart(2, '0');
-            const minutes = now.getMinutes().toString().padStart(2, '0');
-            const timeString = `${hours}:${minutes}`;
-            
-            const timerElement = document.getElementById('wall-timer');
-            if (timerElement) {
-                timerElement.textContent = timeString;
-                console.log('Time updated:', timeString);
-            } else {
-                console.log('Timer element not found');
-            }
+      function updateTime() {
+        const now = new Date();
+        const hours = now.getHours().toString().padStart(2, "0");
+        const minutes = now.getMinutes().toString().padStart(2, "0");
+        const timeString = `${hours}:${minutes}`;
+
+        const timerElement = document.getElementById("wall-timer");
+        if (timerElement) {
+          timerElement.textContent = timeString;
+          console.log("Time updated:", timeString);
+        } else {
+          console.log("Timer element not found");
         }
-        
-        // Wait for DOM to load
-        document.addEventListener('DOMContentLoaded', function() {
-            updateTime();
-            setInterval(updateTime, 1000);
-        });
+      }
+
+      // Wait for DOM to load
+      document.addEventListener("DOMContentLoaded", function () {
+        updateTime();
+        setInterval(updateTime, 1000);
+      });
     </script>
-</body>
+  </body>
 </html>

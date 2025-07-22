@@ -942,6 +942,248 @@ body {
 }
 
 
+/* ===== 3D REALISTIC GAMING KEYBOARD ===== */
+.gaming-keyboard {
+  position: relative;
+  width: 180px;
+  height: 50px;
+  z-index: 12;
+  margin-bottom: 20px;
+  transform: perspective(1000px) rotateX(20deg);
+  filter: drop-shadow(0 15px 25px rgba(0, 0, 0, 0.4));
+}
+
+/* Keyboard Base/Tray - Like your example */
+.keyboard-base {
+  background: linear-gradient(180deg, #eee 0%, #d8d8d8 100%);
+  border-radius: 12px;
+  box-shadow: 
+    inset 0 2px 4px rgba(255,255,255,0.3), 
+    inset 0 1px 2px rgba(255,255,255,0.5), 
+    0 8px 0 #afafaf,
+    0 8px 25px rgba(0,0,0,0.3);
+  display: flex;
+  height: 50px;
+  position: relative;
+  width: 100%;
+  align-items: center;
+  justify-content: center;
+  padding: 5px 8px;
+}
+
+/* Base shadow - like your example */
+.keyboard-base::after {
+  bottom: -8px;
+  box-shadow: 0 8px 40px rgba(0,0,0,0.4);
+  content: '';
+  height: 20px;
+  left: 10%;
+  position: absolute;
+  width: 80%;
+  z-index: -1;
+}
+
+/* Key Row Container */
+.key-row-straight {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  height: 100%;
+}
+
+/* Individual Keys - Ultra Realistic 3D */
+.key {
+  -webkit-appearance: none;
+  background: linear-gradient(180deg, #fff 0%, #f2f2f2 100%);
+  border: 0;
+  border-radius: 8px;
+  box-shadow: 
+    inset 0 1px 2px rgba(255,255,255,0.5), 
+    0 6px 0 #c9c9c9, 
+    0 6px 4px rgba(0,0,0,0.2), 
+    0 8px 6px rgba(0,0,0,0.3);
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  height: 32px;
+  width: 28px;
+  outline: 0;
+  position: relative;
+  z-index: 2;
+  transition: all 0.1s ease;
+  
+  font-family: 'Segoe UI', system-ui, sans-serif;
+  font-size: 8px;
+  font-weight: bold;
+  color: #666;
+  text-shadow: 0 1px 1px rgba(255,255,255,0.8);
+}
+
+/* Special Key Sizes */
+.key-ctrl {
+  width: 32px;
+  font-size: 6px;
+}
+
+.key-enter {
+  width: 36px;
+  font-size: 6px;
+}
+
+/* Blue Accent for CTRL */
+.key-ctrl {
+  background: linear-gradient(180deg, #4a90e2 0%, #357abd 100%);
+  color: #ffffff;
+  text-shadow: 0 1px 2px rgba(0,0,0,0.3);
+  box-shadow: 
+    inset 0 1px 2px rgba(255,255,255,0.3), 
+    0 6px 0 #2c5f8a, 
+    0 6px 4px rgba(0,0,0,0.2), 
+    0 8px 6px rgba(0,0,0,0.3);
+}
+
+/* Red Accent for ENTER */
+.key-enter {
+  background: linear-gradient(180deg, #ff6b6b 0%, #e74c3c 100%);
+  color: #ffffff;
+  text-shadow: 0 1px 2px rgba(0,0,0,0.3);
+  box-shadow: 
+    inset 0 1px 2px rgba(255,255,255,0.3), 
+    0 6px 0 #c0392b, 
+    0 6px 4px rgba(0,0,0,0.2), 
+    0 8px 6px rgba(0,0,0,0.3);
+}
+
+/* Realistic Press Animation - Like your example */
+.key:active {
+  box-shadow: 
+    inset 0 4px 8px rgba(0,0,0,0.2), 
+    inset 0 4px 15px rgba(0,0,0,0.4), 
+    0 1px 0 rgba(255,255,255,0.6);
+  transform: translateY(4px);
+}
+
+.key-ctrl:active {
+  box-shadow: 
+    inset 0 4px 8px rgba(0,0,0,0.3), 
+    inset 0 4px 15px rgba(0,0,0,0.5), 
+    0 1px 0 rgba(255,255,255,0.4);
+  transform: translateY(4px);
+}
+
+.key-enter:active {
+  box-shadow: 
+    inset 0 4px 8px rgba(0,0,0,0.3), 
+    inset 0 4px 15px rgba(0,0,0,0.5), 
+    0 1px 0 rgba(255,255,255,0.4);
+  transform: translateY(4px);
+}
+
+/* Hover Effects */
+.key:hover {
+  background: linear-gradient(180deg, #ffffff 0%, #f8f8f8 100%);
+  transform: translateY(-1px);
+  box-shadow: 
+    inset 0 1px 2px rgba(255,255,255,0.6), 
+    0 7px 0 #c9c9c9, 
+    0 7px 5px rgba(0,0,0,0.2), 
+    0 9px 7px rgba(0,0,0,0.3);
+}
+
+.key-ctrl:hover {
+  background: linear-gradient(180deg, #5ba0f2 0%, #4a90e2 100%);
+  transform: translateY(-1px);
+  box-shadow: 
+    inset 0 1px 2px rgba(255,255,255,0.4), 
+    0 7px 0 #2c5f8a, 
+    0 7px 5px rgba(0,0,0,0.2), 
+    0 9px 7px rgba(0,0,0,0.3);
+}
+
+.key-enter:hover {
+  background: linear-gradient(180deg, #ff7b7b 0%, #ff6b6b 100%);
+  transform: translateY(-1px);
+  box-shadow: 
+    inset 0 1px 2px rgba(255,255,255,0.4), 
+    0 7px 0 #c0392b, 
+    0 7px 5px rgba(0,0,0,0.2), 
+    0 9px 7px rgba(0,0,0,0.3);
+}
+
+/* Brand Label */
+.keyboard-brand {
+  position: absolute;
+  bottom: 2px;
+  right: 6px;
+  font-size: 4px;
+  color: #999;
+  font-weight: bold;
+  letter-spacing: 0.5px;
+  font-family: 'Segoe UI', system-ui, sans-serif;
+}
+
+/* Enhanced lighting effect */
+.keyboard-base::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(145deg, 
+    rgba(255,255,255,0.1) 0%,
+    transparent 30%,
+    transparent 70%,
+    rgba(0,0,0,0.05) 100%);
+  border-radius: 12px;
+  pointer-events: none;
+}
+
+/* Mobile Responsive */
+@media (max-width: 768px) {
+  .gaming-keyboard {
+    width: 150px;
+    height: 42px;
+    transform: perspective(800px) rotateX(18deg);
+  }
+  
+  .keyboard-base {
+    height: 42px;
+    box-shadow: 
+      inset 0 2px 4px rgba(255,255,255,0.3), 
+      inset 0 1px 2px rgba(255,255,255,0.5), 
+      0 6px 0 #afafaf,
+      0 6px 20px rgba(0,0,0,0.3);
+  }
+  
+  .key {
+    width: 24px;
+    height: 28px;
+    font-size: 7px;
+    box-shadow: 
+      inset 0 1px 2px rgba(255,255,255,0.5), 
+      0 5px 0 #c9c9c9, 
+      0 5px 3px rgba(0,0,0,0.2), 
+      0 6px 5px rgba(0,0,0,0.3);
+  }
+  
+  .key-ctrl {
+    width: 28px;
+    font-size: 5px;
+  }
+  
+  .key-enter {
+    width: 30px;
+    font-size: 5px;
+  }
+  
+  .key:active {
+    transform: translateY(3px);
+  }
+}
+
+
 /* ===== RESPONSIVE DESIGN ===== */
 @media (max-width: 1200px) {
   .workspace-container {
